@@ -5,34 +5,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crop rotation app</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Grandstander:ital,wght@0,200;0,400;0,900;1,200;1,400;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header>
-        <h1>Crop Rotation App</h1>
+        <div class="container">
+            <h1>Crop Rotation App</h1>
+            <!-- <nav>Menu</nav> -->
+        </div>
     </header>
     <main>
-        <section id="veg-selection">
-            <div id="veg-selection-intro">Click the veg picture to select it. Click again to deselect. click button below to design your garden.</div>
-            <div id="veg-pool" class="veg-pool"></div>
-            <div id="veg-submit">
-                <button id="veg-submit-button">Add vegetables to my garden</button>
+        <section id="veg-selection" class="container">
+            <div id="veg-selection-intro" class="intro-text">
+                <p>Select your vegetables by clicking the images below. Click again if you want to deselect the vegetable. </p>
+                <p>After you selected your vegetables click <strong>Create my garden</strong> button to set up your crop location plan. Don't worry if you change your mind - you will be able to re-select your vegetables later on.</p>
+            </div>
+            <div id="veg-pool" class="veg-pool flex-container"></div>
+            <div id="veg-submit" class="acenter">
+                <button id="veg-submit-button" class="button add-veg">Create my garden</button>
             </div>
         </section>
-        <section id="veg-garden-area">
+        <section id="veg-garden-area" class="container">
             <div id="veg-garden">
-                <div id="rotation-1"></div>
-                <div id="rotation-2"></div>
-                <div id="rotation-3"></div>
+                <div class="percent100 mb20 intro-text">
+                    <p>Remove veg from the veggie bed by clicking on it. you can add more veg from the veg pool by selecting them and clicking <strong>Add more vegetables</strong> button.</p>
+                </div>
+                <div class="flex-container">
+                    <div class="rotation-bed">
+                        <div class="percent100">
+                            <h3 class="bed-title">Veggie bed 1</h3>
+                        </div>
+                        <div id="rotation-1" class="flex-container"></div>
+                    </div>
+
+                    <div class="rotation-bed">
+                        <div class="percent100">
+                            <h3 class="bed-title">Veggie bed 2</h3>
+                        </div>
+                        <div id="rotation-2" class=" flex-container"> </div>
+                    </div>
+                    <div class="rotation-bed">
+                        <div class="percent100">
+                            <h3 class="bed-title">Veggie bed 3</h3>
+                        </div>
+                        <div id="rotation-3" class=" flex-container"> </div>
+                    </div>
+                    <div class="rotation-bed">
+                        <div class="percent100">
+                            <h3 class="bed-title">Veggie bed 4</h3>
+                        </div>
+                        <div id="rotation-4" class=" flex-container"> </div>
+                    </div>
+                </div>
+
+
             </div>
-            <div id="start-again">
-                <button>Start Again</button>
+            <div id="start-again" class="container acenter">
+                <button class="button start-again">Start Again</button>
             </div>
         </section>
 
     </main>
-    <footer>Made with love by Aleks</footer>
+    <footer>
+        <div class="copy-info container">Made with &#9829; by <a href="https://alekscreative.com">Aleks</a></div>
+    </footer>
 
 
 
