@@ -22,12 +22,10 @@ VEGETABLE POOL
 // Array of vegetable objects
 const veggies = [
     { name: 'Carrots', rGroup: 1, imgUrl: 'img/carrots.png' },
-    { name: 'Tomatoes', rGroup: 2, imgUrl: 'img/tomatos.png' },
-    { name: 'Pumpkins', rGroup: 2, imgUrl: 'img/pumpkins.png' },
-    { name: 'Chard', rGroup: 3, imgUrl: 'img/chard.png' },
-    { name: 'Onions', rGroup: 1, imgUrl: 'img/onions.png' },
-    { name: 'Peppers', rGroup: 2, imgUrl: 'img/peppers.png' },
-    { name: 'Brussel Sprouts', rGroup: 3, imgUrl: 'img/brussels.png' }
+    { name: 'Aubergine', rGroup: 2, imgUrl: 'img/aubergine.png' },
+    { name: 'Beetroot', rGroup: 1, imgUrl: 'img/beetroot.png' },
+    { name: 'Broad beans', rGroup: 3, imgUrl: 'img/broad-beans.png' },
+    { name: 'Broccoli', rGroup: 4, imgUrl: 'img/broccoli.png' }
 ];
 
 veggies.sort((a, b) => {
@@ -52,9 +50,14 @@ const vegSubmit = document.getElementById('veg-submit');
 const vegGarden = document.getElementById('veg-garden');
 const vegSubmitButton = document.getElementById('veg-submit-button');
 
+// Hide rotation beds
+
+
+
 // Display vegetable pool
 const populatePool = function() {
     veggies.forEach(function(veg) {
+        vegGarden.classList.add('hide-garden');
         const vegDiv = document.createElement('div');
         vegDiv.classList.add('veg-card', `rotation-${veg.rGroup}`);
         vegDiv.innerHTML = `<h2>${veg.name}</h2> <img class="veg-image" src="${veg.imgUrl}" alt="${veg.name}">`;
@@ -76,6 +79,7 @@ function selectVeg(e) {
 
 // Function: put veg in veggie beds depending on rotation group
 function addVeg(rotNum) {
+    vegGarden.classList.remove('hide-garden');
     const vegBed = document.querySelector(`#rotation-${rotNum}`);
     const selectedVegRot = document.getElementsByClassName(`selected-veg rotation-${rotNum}`);
     const selectedVegRotArray = Array.from(selectedVegRot); //turn HTML collection into array
@@ -89,7 +93,8 @@ function addVegetables() {
         addVeg(1);
         addVeg(2);
         addVeg(3);
-        vegSubmitButton.innerHTML = 'Add more veg';
+        addVeg(4);
+        vegSubmitButton.innerHTML = 'Add more vegetables';
         e.preventDefault();
     });
 
@@ -113,13 +118,15 @@ const startAgain = document.getElementById('start-again');
 const vegBed1 = document.getElementById('rotation-1');
 const vegBed2 = document.getElementById('rotation-2');
 const vegBed3 = document.getElementById('rotation-3');
+const vegBed4 = document.getElementById('rotation-4');
 
 startAgain.addEventListener('click', function(e) {
-    vegSubmitButton.innerHTML = 'Add vegetables to my garden';
+    vegSubmitButton.innerHTML = 'Create my garden';
     clearElement(vegPool);
     clearElement(vegBed1);
     clearElement(vegBed2);
     clearElement(vegBed3);
+    clearElement(vegBed4);
     populatePool();
     e.preventDefault();
 });
