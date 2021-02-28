@@ -157,6 +157,7 @@
         font-size: 18px;
         line-height: 22px;
         font-weight: 300;
+        margin-bottom: 8px;
     }
     
     strong {
@@ -165,26 +166,33 @@
     
     h1 {
         color: #3b4432;
-        font-size: 50px;
+        font-size: 60px;
         font-weight: 100;
-        margin-top: 20px;
+        margin: 20px 0;
     }
     
     h2 {
         color: #3b4432;
         font-size: 30px;
-        margin-top: 10px;
+        font-weight: 100;
+        margin-bottom: 25px;
     }
     
     h3 {
         font-size: 23px;
-        margin-top: 10px;
+        font-weight: 500;
+        margin-bottom: 10px;
     }
+    /* Helpers */
     
     .mb20 {
         margin-bottom: 20px;
-        ;
     }
+    
+    .acenter {
+        text-align: center;
+    }
+    /* Buttons */
     
     .button {
         height: 50px;
@@ -224,6 +232,7 @@
     header,
     footer {
         text-align: center;
+        padding: 10px;
     }
     
     .container {
@@ -237,37 +246,33 @@
         justify-content: center;
     }
     
-    @media screen and (min-width: 1200px) {
-        .container {
-            width: 1200px;
-            margin: 0 auto;
-        }
-    }
-    
     .percent100 {
         width: 100%;
     }
-    
-    .acenter {
-        text-align: center;
-    }
+    /* Page elements */
+    /* Intro text */
     
     .intro-text {
-        max-width: 800px;
-        margin: 0 auto;
+        width: 90%;
+        margin: 5%;
         margin-bottom: 20px;
+        padding: 25px;
+        background-color: #d6e2ca;
+        border-radius: 10px;
+        box-shadow: 1px 1px 2px 1px #9fad90;
     }
     /* Veg pool */
     
     .veg-pool {
         margin: 20px 0;
+        min-height: 130px;
     }
     /* Veg card */
     
     .veg-card {
         width: 110px;
         height: 118px;
-        margin: 5px;
+        margin: 6px;
         text-align: center;
         background-color: #BFD0AE;
         border-bottom: 3px solid #9fad90;
@@ -275,14 +280,20 @@
         opacity: 0.7;
         border-radius: 16px;
         box-shadow: 1px 1px 2px 1px #3b4432;
+        transition: all 0.2s ease 0.1s;
+        -webkit-transition: all 0.2s ease 0.1s;
+        -moz-transition: all 0.2s ease 0.1s;
+        -ms-transition: all 0.2s ease 0.1s;
+        -o-transition: all 0.2s ease 0.1s;
     }
     
-    .veg-card h2 {
+    .veg-card h4 {
         height: 18px;
+        padding: 0 5px;
         padding-top: 7px;
         margin-top: 0;
         font-size: 14px;
-        color: #3b4432;
+        color: #2b3124;
         text-align: center;
     }
     
@@ -291,7 +302,12 @@
         border-right-width: 7px;
         opacity: 1;
     }
-    /* rotation beds */
+    
+    .animate-card {
+        width: 112px;
+        height: 120px;
+    }
+    /* Veg Garden - Rotation beds */
     
     .hide-garden {
         display: none;
@@ -311,14 +327,25 @@
         box-shadow: inset 0px 0px 20px 10px rgba(61, 53, 24, 0.5);
     }
     
-    @media screen and (max-width: 800px) {
-        .rotation-bed {
-            width: 90%;
-        }
-    }
-    
     .bed-title {
         text-align: center;
         color: #fff;
         margin-bottom: 10px;
+    }
+    /* Media queries */
+    
+    @media screen and (min-width: 1220px) {
+        .container {
+            width: 1220px;
+            margin: 0 auto;
+        }
+        .intro-text {
+            width: 800px;
+        }
+    }
+    
+    @media screen and (max-width: 800px) {
+        .rotation-bed {
+            width: 90%;
+        }
     }
